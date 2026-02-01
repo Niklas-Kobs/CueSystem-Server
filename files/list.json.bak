@@ -1,33 +1,29 @@
 {
-    "PNR_1":{
+    "PNR_1": {
         "WNR-1": "#0001",
         "Timeestimate-1": "12:00",
         "Status-1": "Waiting",
-        "call-1": false
+        "call-1": true
     },
-
     "PNR_2": {
         "WNR-2": "#0002",
         "Timeestimate-2": "12:30",
         "Status-2": "Waiting",
         "call-2": false
     },
-
     "PNR_3": {
         "WNR-3": "#0003",
         "Timeestimate-3": "13:00",
         "Status-3": "Waiting",
         "call-3": false
     },
-
     "PNR_4": {
         "WNR-4": "#0004",
         "Timeestimate-4": "13:30",
         "Status-4": "Waiting",
         "call-4": false
     },
-
-    "PNR_5":{
+    "PNR_5": {
         "WNR-5": "#0005",
         "Timeestimate-5": "---",
         "Status-5": "---",

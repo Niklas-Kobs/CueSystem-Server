@@ -1,9 +1,6 @@
-import API.jsonLib as jl
 import json
 from flask import Flask, request, jsonify, render_template
 from waitress import serve
-
-jl.libconfig(check=True, autoLoad=True, autoCreate=True, Print=True, set_reset=True, fileName="Daten.json")
 
 app = Flask(__name__)
 
@@ -17,7 +14,7 @@ def index():
 def handle_View():
     global readError
     try:
-        with open("list.json", "r") as f:
+        with open("files/list.json", "r") as f:
             inhalt = json.load(f)
         readError = 0
         return jsonify(inhalt)

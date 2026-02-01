@@ -23,7 +23,7 @@
             <table>
                 <thead>
                     <tr>
-                    <th class="wnr-spalte"><span id="WNR-1" class="WNR">---</span></th>
+                    <th class="wnr-spalte"><span id="WNR_1" class="WNR">---</span></th>
                     <th>
                         <table>
                         <thead>
@@ -34,8 +34,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate-1" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status-1" class="Status">---</span></h4></td>
+                            <td><h4><span id="Timeestimate_1" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status_1" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
                     </table>
@@ -49,7 +49,7 @@
             <table>
                 <thead>
                     <tr>
-                    <th class="wnr-spalte"><span id="WNR-2" class="WNR">---</span></th>
+                    <th class="wnr-spalte"><span id="WNR_2" class="WNR">---</span></th>
                     <th>
                         <table>
                         <thead>
@@ -60,8 +60,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate-2" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status-2" class="Status">---</span></h4></td>
+                            <td><h4><span id="Timeestimate_2" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status_2" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
                     </table>
@@ -75,7 +75,7 @@
             <table>
                 <thead>
                     <tr>
-                    <th class="wnr-spalte"><span id="WNR-3" class="WNR">---</span></th>
+                    <th class="wnr-spalte"><span id="WNR_3" class="WNR">---</span></th>
                     <th>
                         <table>
                         <thead>
@@ -86,8 +86,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate-3" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status-3" class="Status">---</span></h4></td>
+                            <td><h4><span id="Timeestimate_3" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status_3" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
                     </table>
@@ -101,7 +101,7 @@
             <table>
                 <thead>
                     <tr>
-                    <th class="wnr-spalte"><span id="WNR-4" class="WNR">---</span></th>
+                    <th class="wnr-spalte"><span id="WNR_4" class="WNR">---</span></th>
                     <th>
                         <table>
                         <thead>
@@ -112,8 +112,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate-4" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status-4" class="Status">---</span></h4></td>
+                            <td><h4><span id="Timeestimate_4" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status_4" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
                     </table>
@@ -127,7 +127,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="wnr-spalte"><span id="WNR-5" class="WNR">---</span></th>
+                        <th class="wnr-spalte"><span id="WNR_5" class="WNR">---</span></th>
                         <th>
                             <table>
                                 <thead>
@@ -138,8 +138,8 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                    <td><h4><span id="Timeestimate-5" class="Timeestimate">---</span></h4></td>
-                                    <td><h4><span id="Status-5" class="Status">---</span></h4></td>
+                                    <td><h4><span id="Timeestimate_5" class="Timeestimate">---</span></h4></td>
+                                    <td><h4><span id="Status_5" class="Status">---</span></h4></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -177,7 +177,7 @@
                     const pnrs = ["PNR_1", "PNR_2", "PNR_3", "PNR_4", "PNR_5"];
 
                     pnrs.forEach((pnr, index) => {
-                        const callKey = `call-${index + 1}`;
+                        const callKey = `call_${index + 1}`;
                         const currentCallStatus = data[pnr][callKey];
 
                         // PRÜFUNG: Ist der Status jetzt TRUE, aber war vorher FALSE?
@@ -205,25 +205,25 @@
                     const lastKey = keys[keys.length - 1];
                     const lastEntry = data[lastKey];
 
-                    document.getElementById('WNR-1').innerText = data["PNR_1"]["WNR-1"];
-                    document.getElementById('Timeestimate-1').innerText = data["PNR_1"]["Timeestimate-1"];
-                    document.getElementById('Status-1').innerText = data["PNR_1"]["Status-1"];
+                    document.getElementById('WNR_1').innerText = data["PNR_1"]["WNR_1"];
+                    document.getElementById('Timeestimate_1').innerText = data["PNR_1"]["Timeestimate_1"];
+                    document.getElementById('Status_1').innerText = data["PNR_1"]["Status_1"];
 
-                    document.getElementById('WNR-2').innerText = data["PNR_2"]["WNR-2"];
-                    document.getElementById('Timeestimate-2').innerText = data["PNR_2"]["Timeestimate-2"];
-                    document.getElementById('Status-2').innerText = data["PNR_2"]["Status-2"];
+                    document.getElementById('WNR_2').innerText = data["PNR_2"]["WNR_2"];
+                    document.getElementById('Timeestimate_2').innerText = data["PNR_2"]["Timeestimate_2"];
+                    document.getElementById('Status_2').innerText = data["PNR_2"]["Status_2"];
 
-                    document.getElementById('WNR-3').innerText = data["PNR_3"]["WNR-3"];
-                    document.getElementById('Timeestimate-3').innerText = data["PNR_3"]["Timeestimate-3"];
-                    document.getElementById('Status-3').innerText = data["PNR_3"]["Status-3"];
+                    document.getElementById('WNR_3').innerText = data["PNR_3"]["WNR_3"];
+                    document.getElementById('Timeestimate_3').innerText = data["PNR_3"]["Timeestimate_3"];
+                    document.getElementById('Status_3').innerText = data["PNR_3"]["Status-3"];
 
-                    document.getElementById('WNR-4').innerText = data["PNR_4"]["WNR-4"];
-                    document.getElementById('Timeestimate-4').innerText = data["PNR_4"]["Timeestimate-4"];
-                    document.getElementById('Status-4').innerText = data["PNR_4"]["Status-4"];
+                    document.getElementById('WNR_4').innerText = data["PNR_4"]["WNR_4"];
+                    document.getElementById('Timeestimate_4').innerText = data["PNR_4"]["Timeestimate_4"];
+                    document.getElementById('Status_4').innerText = data["PNR_4"]["Status_4"];
 
-                    document.getElementById('WNR-5').innerText = data["PNR_5"]["WNR-5"];
-                    document.getElementById('Timeestimate-5').innerText = data["PNR_5"]["Timeestimate-5"];
-                    document.getElementById('Status-5').innerText = data["PNR_5"]["Status-5"];
+                    document.getElementById('WNR_5').innerText = data["PNR_5"]["WNR_5"];
+                    document.getElementById('Timeestimate_5').innerText = data["PNR_5"]["Timeestimate_5"];
+                    document.getElementById('Status_5').innerText = data["PNR_5"]["Status_5"];
 
                     const card1 = document.querySelector('.card');
                     const card2 = document.querySelector('.card2');
@@ -231,35 +231,35 @@
                     const card4 = document.querySelector('.card4');
                     const card5 = document.querySelector('.card5');
 
-                    if (data["PNR_1"]["call-1"] === true) {
+                    if (data["PNR_1"]["call_1"] === true) {
                         card1.classList.add('status-green');
                         card1.classList.remove('status-rot');
                     } else {
                         card1.classList.remove('status-green');
                     }
 
-                    if (data["PNR_2"]["call-2"] === true) {
+                    if (data["PNR_2"]["call_2"] === true) {
                         card2.classList.add('status-green2');
                         card2.classList.remove('status-rot');
                     } else {
                         card2.classList.remove('status-green2');
                     }
 
-                    if (data["PNR_3"]["call-3"] === true) {
+                    if (data["PNR_3"]["call_3"] === true) {
                         card3.classList.add('status-green');
                         card3.classList.remove('status-rot');
                     } else {
                         card3.classList.remove('status-green');
                     }
 
-                    if (data["PNR_4"]["call-4"] === true) {
+                    if (data["PNR_4"]["call_4"] === true) {
                         card4.classList.add('status-green2');
                         card4.classList.remove('status-rot');
                     } else {
                         card4.classList.remove('status-green2');
                     }
 
-                    if (data["PNR_5"]["call-5"] === true) {
+                    if (data["PNR_5"]["call_5"] === true) {
                         card5.classList.add('status-green');
                         card5.classList.remove('status-rot');
                     } else {

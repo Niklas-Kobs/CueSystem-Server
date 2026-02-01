@@ -5,9 +5,8 @@ from waitress import serve
 import jsonLib as jl
 
 jsonList = {
-    "config": "../config.json",
-    "data": "data.json",
-    "list": "../list.json"
+    "config": "../files/config.json", #configuration für das Projekt
+    "list": "../files/list.json"
 }
 
 for key, file in jsonList.items():
@@ -32,34 +31,22 @@ def index():
     server_ip = get_local_ip()
     return render_template('index.html', ip_adresse=server_ip)
 
-@app.route('/show', methods=['GET'])
-def handle_View():
-    inhalt = jl.get("PNr_2")
-    return jsonify(inhalt)
-
 @app.route('/update', methods=['POST'])
 def handle_request():
     data = request.json 
     
-    PNr = data.get("PNr")
-    Cue_Pos = data.get("Cue_Pos")
-    Call = data.get("Call")
-    delete = data.get("delete")
-    Time = data.get("Time")
-    timecode = data.get("Timecode")
-    Posttime = data.get("Posttime")
-    Move = data.get("Move")
+    PNR_1 = data.get("PNR_1")
+    WNR_1 = data.get("WNR-1")
+    Timeestimate_1 = data.get("Timeestimate-1")
+    PNR_1 = data.get("PNR_1")
+    PNR_1 = data.get("PNR_1")
 
     daten = {
-
-        PNr:{
-            "Cue_Pos": Cue_Pos,
-            "Call": Call,
-            "delete": delete,
-            "Time": Time,
-            "Timecode": timecode,
-            "Posttime": Posttime,
-            "Move": Move
+        "PNR_1": {
+        "WNR-1": "#0001",
+        "Timeestimate-1": "12:00",
+        "Status-1": "Waiting",
+        "call-1": True
         }
     }
 
@@ -75,5 +62,4 @@ def handle_request():
     return jsonify({"status": "Erfolgreich empfangen"}), 200
 
 if __name__ == '__main__':
-    #app.run(host='0.0.0.0', port=5000)
     serve(app, host='0.0.0.0', port=50000, threads=6)
