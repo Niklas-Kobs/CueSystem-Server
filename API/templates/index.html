@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-Cuesystem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <table>
+            <thead>
+                <th><img src="{{ url_for('static', filename='img/DummyLogoW.svg') }}" alt="Logo" class="main-logo"></th>
+                <th>
+                    <h1>Queue System</h1>
+                </th>
+            </thead>
+        </table>
+    </header>
+    
+    <div class="card">
+        <h2>-API-</h2>
+        <p>Die Warteliste finden sie unter http://{{ ip_adresse }}:55000.</p>
+
+</body>
+</html>

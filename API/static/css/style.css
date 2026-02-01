@@ -1,0 +1,275 @@
+body {
+    font-family: Verdana,Arial, sans-serif;
+    background-color: #798a91;
+    margin: 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list {
+    font-family: Verdana,Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    color: #ffffff;
+    width: auto;
+    margin-top: 40px;
+    margin-bottom: 45px;
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-logo {
+    height: 100px;      
+    width: auto;
+    margin-right: 50px;
+    vertical-align: middle;
+}
+
+table {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: -5px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+td {
+    width: 20%;
+    border-radius: 8px;
+    overflow: hidden;
+    align-items: normal;
+    text-align: normal;
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+tr {
+    width: 20%;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: normal;
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.wnr-spalte {
+    width: 20%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card {
+    background: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
+    width: 80%;
+    height: 150px;
+    text-align: center;
+    justify-content: space-between;
+}
+.card2 {
+    background: #bebebe;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
+    width: 95%;
+    height: 75px;
+    text-align: center;
+    justify-content: space-between;
+}
+.card3 {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
+    width: 95%;
+    height: 75px;
+    text-align: center;
+    justify-content: space-between;
+}
+.card4 {
+    background: #bebebe;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
+    width: 95%;
+    height: 75px;
+    text-align: center;
+    justify-content: space-between;
+}
+.card5 {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
+    width: 95%;
+    height: 75px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 55px;
+    text-align: left;
+}
+
+h2 {
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+
+.dataH1 {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.WNR {
+    color: #000000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.Timeestimate {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Status {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Time {
+    color: #ffffff;
+    height: 20px;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        color: #ffffff;
+        width: auto;
+        margin-top:10px;
+        margin-bottom: 20px;
+        margin-left:0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .main-logo {
+        height: 70px;      
+        width: auto;
+        margin-right: 10px;
+        margin-left: 0px;
+        vertical-align: left;
+    }
+    body {
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .card, .card2, .card3, .card4, .card5 {
+        width: 95%;
+        height: 150px;
+        padding: 1rem;
+        font-size: 15px;
+        font-weight: bold;
+        /*background-color: #000000;*/
+    }
+
+    .dataH1 {
+        font-size: 15px;
+        color: #000000;
+    }
+
+    .Timeestimate {
+        color: #000000;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .Status {
+        color: #000000;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .WNR {
+        font-size: 20px;
+    }
+
+    .Time {
+    color: #ffffff;
+    height: 10px;
+    font-size: 15px;
+    }
+}
+
+@keyframes blinker2 {
+    0%   { opacity: 1.0; } 
+    50%  { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+    0%   { background-color: #68b675; } 
+    50%  { background-color: #d2df99; }
+    100% { background-color: #68b675; }
+}
+
+.status-green {
+    /*background-color: #e9ffc6 !important;*/
+    border: 2px solid #ffffff;
+    color: rgb(0, 0, 0);
+    animation: blinker 1.5s ease-in-out infinite !important;
+}
+
+.status-green2 {
+     /*background-color: #e9ffc6 !important;*/
+    border: 2px solid #ffffff;
+    color: rgb(0, 0, 0);
+    animation: blinker 1.5s ease-in-out infinite !important;
+}
+
+.status-rot {
+    background-color: #dc3545 !important;
+    color: white;
+}

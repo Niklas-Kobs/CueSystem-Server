@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <table>
+            <theadHead>
+                <th>
+                    <h1>Warteliste:</h1>
+                    <h3>Warte bitte bis deine Nummer aufgerufen wird</h3>
+                </th>
+                <th><img src="{{ url_for('static', filename='img/DummyLogoW.svg') }}" alt="Logo" class="main-logo"></th>
+            </theadHead>
+        </table>
+    </header>
+    <div class="list">
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                    <th class="wnr-spalte"><span id="WNR-1" class="WNR">---</span></th>
+                    <th>
+                        <table>
+                        <thead>
+                            <tr>
+                                <th><span class="dataH1">Geplante Zeit:</span></th>
+                                <th><span class="dataH1">Aktueller Status:</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td><h4><span id="Timeestimate-1" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status-1" class="Status">---</span></h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="card2">
+            <table>
+                <thead>
+                    <tr>
+                    <th class="wnr-spalte"><span id="WNR-2" class="WNR">---</span></th>
+                    <th>
+                        <table>
+                        <thead>
+                            <tr>
+                                <th><span class="dataH1">Geplante Zeit:</span></th>
+                                <th><span class="dataH1">Aktueller Status:</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td><h4><span id="Timeestimate-2" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status-2" class="Status">---</span></h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+            <div class="card3">
+            <table>
+                <thead>
+                    <tr>
+                    <th class="wnr-spalte"><span id="WNR-3" class="WNR">---</span></th>
+                    <th>
+                        <table>
+                        <thead>
+                            <tr>
+                                <th><span class="dataH1">Geplante Zeit:</span></th>
+                                <th><span class="dataH1">Aktueller Status:</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td><h4><span id="Timeestimate-3" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status-3" class="Status">---</span></h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+            <div class="card4">
+            <table>
+                <thead>
+                    <tr>
+                    <th class="wnr-spalte"><span id="WNR-4" class="WNR">---</span></th>
+                    <th>
+                        <table>
+                        <thead>
+                            <tr>
+                                <th><span class="dataH1">Geplante Zeit:</span></th>
+                                <th><span class="dataH1">Aktueller Status:</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td><h4><span id="Timeestimate-4" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Status-4" class="Status">---</span></h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+            <div class="card5">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="wnr-spalte"><span id="WNR-5" class="WNR">---</span></th>
+                        <th>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><span class="dataH1">Geplante Zeit:</span></th>
+                                        <th><span class="dataH1">Aktueller Status:</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td><h4><span id="Timeestimate-5" class="Timeestimate">---</span></h4></td>
+                                    <td><h4><span id="Status-5" class="Status">---</span></h4></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="Time">
+        <p>Aktuelle Zeit: <span id="clock">---</span></p>
+    </div>
+
+
+
+<script>
+    const callSound = new Audio("{{ url_for('static', filename='sounds/Alarm.mp3') }}");
+    let lastCallStates = {
+        "PNR_1": false, "PNR_2": false, "PNR_3": false, "PNR_4": false, "PNR_5": false
+    };
+    function updateData() {
+        const now = new Date();
+        const currentTime = now.toLocaleTimeString('de-DE');
+        const clockElement = document.getElementById('clock');
+        if (clockElement) {
+            clockElement.innerText = currentTime;
+        }
+        fetch('/show')
+            .then(response => response.json())
+            .then(data => {
+                if (Object.keys(data).length > 0) {
+                    
+                    // Liste der PNRs, die wir prüfen wollen
+                    const pnrs = ["PNR_1", "PNR_2", "PNR_3", "PNR_4", "PNR_5"];
+
+                    pnrs.forEach((pnr, index) => {
+                        const callKey = `call-${index + 1}`;
+                        const currentCallStatus = data[pnr][callKey];
+
+                        // PRÜFUNG: Ist der Status jetzt TRUE, aber war vorher FALSE?
+                        if (currentCallStatus === true && lastCallStates[pnr] === false) {
+                            console.log(`Sound wird abgespielt für ${pnr}`);
+                            callSound.play().catch(error => {
+                                console.log("Browser blockiert Sound ohne Interaktion:", error);
+                            });
+                        }
+
+                        // Aktuellen Status für den nächsten Durchlauf speichern
+                        lastCallStates[pnr] = currentCallStatus;
+                    });
+
+                    
+                }
+            })
+            .catch(error => console.error('Fehler beim Laden:', error));
+
+        fetch('/show')
+            .then(response => response.json())
+            .then(data => {
+                const keys = Object.keys(data);
+                if (keys.length > 0) {
+                    const lastKey = keys[keys.length - 1];
+                    const lastEntry = data[lastKey];
+
+                    document.getElementById('WNR-1').innerText = data["PNR_1"]["WNR-1"];
+                    document.getElementById('Timeestimate-1').innerText = data["PNR_1"]["Timeestimate-1"];
+                    document.getElementById('Status-1').innerText = data["PNR_1"]["Status-1"];
+
+                    document.getElementById('WNR-2').innerText = data["PNR_2"]["WNR-2"];
+                    document.getElementById('Timeestimate-2').innerText = data["PNR_2"]["Timeestimate-2"];
+                    document.getElementById('Status-2').innerText = data["PNR_2"]["Status-2"];
+
+                    document.getElementById('WNR-3').innerText = data["PNR_3"]["WNR-3"];
+                    document.getElementById('Timeestimate-3').innerText = data["PNR_3"]["Timeestimate-3"];
+                    document.getElementById('Status-3').innerText = data["PNR_3"]["Status-3"];
+
+                    document.getElementById('WNR-4').innerText = data["PNR_4"]["WNR-4"];
+                    document.getElementById('Timeestimate-4').innerText = data["PNR_4"]["Timeestimate-4"];
+                    document.getElementById('Status-4').innerText = data["PNR_4"]["Status-4"];
+
+                    document.getElementById('WNR-5').innerText = data["PNR_5"]["WNR-5"];
+                    document.getElementById('Timeestimate-5').innerText = data["PNR_5"]["Timeestimate-5"];
+                    document.getElementById('Status-5').innerText = data["PNR_5"]["Status-5"];
+
+                    const card1 = document.querySelector('.card');
+                    const card2 = document.querySelector('.card2');
+                    const card3 = document.querySelector('.card3');
+                    const card4 = document.querySelector('.card4');
+                    const card5 = document.querySelector('.card5');
+
+                    if (data["PNR_1"]["call-1"] === true) {
+                        card1.classList.add('status-green');
+                        card1.classList.remove('status-rot');
+                    } else {
+                        card1.classList.remove('status-green');
+                    }
+
+                    if (data["PNR_2"]["call-2"] === true) {
+                        card2.classList.add('status-green2');
+                        card2.classList.remove('status-rot');
+                    } else {
+                        card2.classList.remove('status-green2');
+                    }
+
+                    if (data["PNR_3"]["call-3"] === true) {
+                        card3.classList.add('status-green');
+                        card3.classList.remove('status-rot');
+                    } else {
+                        card3.classList.remove('status-green');
+                    }
+
+                    if (data["PNR_4"]["call-4"] === true) {
+                        card4.classList.add('status-green2');
+                        card4.classList.remove('status-rot');
+                    } else {
+                        card4.classList.remove('status-green2');
+                    }
+
+                    if (data["PNR_5"]["call-5"] === true) {
+                        card5.classList.add('status-green');
+                        card5.classList.remove('status-rot');
+                    } else {
+                        card5.classList.remove('status-green');
+                    }
+                }
+            })
+            .catch(error => console.error('Fehler beim Laden:', error));
+    }
+    setInterval(updateData, 500);
+</script>
+</body>
+</html>
