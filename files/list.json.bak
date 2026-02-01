@@ -3,7 +3,7 @@
         "WNR_1": "#0001",
         "Timeestimate_1": "12:00",
         "Status_1": "Waiting",
-        "call_1": false
+        "call_1": true
     },
     "PNR_2": {
         "WNR_2": "#0002",
