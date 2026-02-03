@@ -159,7 +159,7 @@
 <script>
     const callSound = new Audio("{{ url_for('static', filename='sounds/Alarm.mp3') }}");
     let lastCallStates = {
-        "PNR_1": false, "PNR_2": false, "PNR_3": false, "PNR_4": false, "PNR_5": false
+        "PNR_1": null, "PNR_2": null, "PNR_3": null, "PNR_4": null, "PNR_5": null
     };
     function updateData() {
         const now = new Date();
@@ -179,8 +179,8 @@
                         const callKey = `call_${index + 1}`;
                         const currentCallStatus = data[pnr][callKey];
 
-                        // PRÜFUNG: Ist der Status jetzt TRUE, aber war vorher FALSE?
-                        if (currentCallStatus === true && lastCallStates[pnr] === false) {
+                        
+                        if (currentCallStatus !== null && lastCallStates[pnr] !== currentCallStatus) {
                             console.log(`Sound wird abgespielt für ${pnr}`);
                             callSound.play().catch(error => {
                                 console.log("Browser blockiert Sound ohne Interaktion:", error);
