@@ -251,6 +251,12 @@ h3 {
     100% { background-color: #68b675; }
 }
 
+@keyframes blinkerRot {
+    0%   { background-color: #dc3545; } 
+    50%  { background-color: #ff6762; }
+    100% { background-color: #dc3545; }
+}
+
 .status-green {
     /*background-color: #e9ffc6 !important;*/
     border: 2px solid #ffffff;
@@ -266,6 +272,7 @@ h3 {
 }
 
 .status-rot {
-    background-color: #dc3545 !important;
+    background-color: #dc3545;
     color: white;
+    animation: blinkerRot 1.5s ease-in-out infinite !important;
 }

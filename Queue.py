@@ -26,35 +26,35 @@ def handle_View():
             "WNR-1": "---",
             "Timeestimate-1": "---",
             "Status-1": "---",
-            "call-1": False
+            "call-1": None
         },
 
         "PNR_2": {
             "WNR-2": "---",
             "Timeestimate-2": "---",
             "Status-2": "---",
-            "call-2": False
+            "call-2": None
         },
 
         "PNR_3": {
             "WNR-3": "---",
             "Timeestimate-3": "---",
             "Status-3": "---",
-            "call-3": False
+            "call-3": None
         },
 
         "PNR_4": {
             "WNR-4": "---",
             "Timeestimate-4": "---",
             "Status-4": "---",
-            "call-4": False
+            "call-4": None
         },
 
         "PNR_5":{
             "WNR-5": "---",
             "Timeestimate-5": "---",
             "Status-5": "---",
-            "call-5": False
+            "call-5": None
         }}
         print ((f"Attempt: {readError}"))
         if readError >= 20:

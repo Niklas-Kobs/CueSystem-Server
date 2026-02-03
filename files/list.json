@@ -3,30 +3,30 @@
         "WNR_1": "#0001",
         "Timeestimate_1": "12:00",
         "Status_1": "Waiting",
-        "call_1": false
+        "call_1": null
     },
     "PNR_2": {
         "WNR_2": "#0002",
         "Timeestimate_2": "12:30",
         "Status_2": "Waiting",
-        "call_2": false
+        "call_2": null
     },
     "PNR_3": {
         "WNR_3": "#0003",
         "Timeestimate_3": "13:00",
         "Status_3": "Waiting",
-        "call_3": false
+        "call_3": null
     },
     "PNR_4": {
         "WNR_4": "#0004",
         "Timeestimate_4": "13:30",
         "Status_4": "Waiting",
-        "call_4": false
+        "call_4": null
     },
     "PNR_5": {
         "WNR_5": "#0005",
         "Timeestimate_5": "---",
         "Status_5": "---",
-        "call_5": false
+        "call_5": null
     }
 }

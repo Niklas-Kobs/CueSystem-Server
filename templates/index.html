@@ -173,7 +173,6 @@
             .then(data => {
                 if (Object.keys(data).length > 0) {
                     
-                    // Liste der PNRs, die wir prüfen wollen
                     const pnrs = ["PNR_1", "PNR_2", "PNR_3", "PNR_4", "PNR_5"];
 
                     pnrs.forEach((pnr, index) => {
@@ -215,7 +214,7 @@
 
                     document.getElementById('WNR_3').innerText = data["PNR_3"]["WNR_3"];
                     document.getElementById('Timeestimate_3').innerText = data["PNR_3"]["Timeestimate_3"];
-                    document.getElementById('Status_3').innerText = data["PNR_3"]["Status-3"];
+                    document.getElementById('Status_3').innerText = data["PNR_3"]["Status_3"];
 
                     document.getElementById('WNR_4').innerText = data["PNR_4"]["WNR_4"];
                     document.getElementById('Timeestimate_4').innerText = data["PNR_4"]["Timeestimate_4"];
@@ -230,6 +229,41 @@
                     const card3 = document.querySelector('.card3');
                     const card4 = document.querySelector('.card4');
                     const card5 = document.querySelector('.card5');
+
+                    if (data["PNR_1"]["call_1"] === false) {
+                        card1.classList.add('status-rot');
+                        card1.classList.remove('status-green');
+                    } else {
+                        card1.classList.remove('status-rot');
+                    }
+
+                    if (data["PNR_2"]["call_2"] === false) {
+                        card2.classList.add('status-rot');
+                        card2.classList.remove('status-green');
+                    } else {
+                        card2.classList.remove('status-rot');
+                    }
+
+                    if (data["PNR_3"]["call_3"] === false) {
+                        card3.classList.add('status-rot');
+                        card3.classList.remove('status-green');
+                    } else {
+                        card3.classList.remove('status-rot');
+                    }
+
+                    if (data["PNR_4"]["call_4"] === false) {
+                        card4.classList.add('status-rot');
+                        card4.classList.remove('status-green');
+                    } else {
+                        card4.classList.remove('status-rot');
+                    }
+
+                    if (data["PNR_5"]["call_5"] === false) {
+                        card5.classList.add('status-rot');
+                        card5.classList.remove('status-green');
+                    } else {
+                        card5.classList.remove('status-rot');
+                    }
 
                     if (data["PNR_1"]["call_1"] === true) {
                         card1.classList.add('status-green');
