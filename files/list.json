@@ -28,5 +28,10 @@
         "Timeestimate_5": "---",
         "Status_5": "---",
         "call_5": null
+    },
+    "POPUP": {
+        "POP": false,
+        "POP_H": "HINWEIS",
+        "POP_T": "Auf Grund von technischen Störungen werden sie gebeten das Haus zu verlassen. Bitte halten sie sich an die Anweisungen des Personals"
     }
 }

@@ -154,6 +154,18 @@
         <p>Aktuelle Zeit: <span id="clock">---</span></p>
     </div>
 
+    <dialog id="POPUP" class="POPUP">
+        <div class="thPOP">
+                <h3><span id="POP_H" class="POPH">---</span></h3>
+                <p><span id="POP_T" class="POPT">---</span></p>
+        </div>
+    </dialog>
+
+    <style>
+        dialog::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
 
 
 <script>
@@ -224,11 +236,21 @@
                     document.getElementById('Timeestimate_5').innerText = data["PNR_5"]["Timeestimate_5"];
                     document.getElementById('Status_5').innerText = data["PNR_5"]["Status_5"];
 
+                    document.getElementById('POP_H').innerText = data["POPUP"]["POP_H"];
+                    document.getElementById('POP_T').innerText = data["POPUP"]["POP_T"];
+
                     const card1 = document.querySelector('.card');
                     const card2 = document.querySelector('.card2');
                     const card3 = document.querySelector('.card3');
                     const card4 = document.querySelector('.card4');
                     const card5 = document.querySelector('.card5');
+
+                    if (data["POPUP"]["POP"] === true) {
+                        document.getElementById('POPUP').showModal()
+                    } else {
+                        document.getElementById('POPUP').close()
+                    }
+
 
                     if (data["PNR_1"]["call_1"] === false) {
                         card1.classList.add('status-rot');

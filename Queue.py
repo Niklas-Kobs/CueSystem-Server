@@ -55,7 +55,13 @@ def handle_View():
             "Timeestimate-5": "---",
             "Status-5": "---",
             "call-5": None
+        },
+        "POP": {
+            "POP": True,
+            "POP_H": "ERROR",
+            "POP_T": "Queuefile not found or corrupted"
         }}
+
         print ((f"Attempt: {readError}"))
         if readError >= 20:
             return jsonify (ERRORdata)
