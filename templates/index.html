@@ -163,7 +163,7 @@
 
     <style>
         dialog::backdrop {
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.8);
         }
     </style>
 
@@ -171,7 +171,7 @@
 <script>
     const callSound = new Audio("{{ url_for('static', filename='sounds/Alarm.mp3') }}");
     let lastCallStates = {
-        "PNR_1": null, "PNR_2": null, "PNR_3": null, "PNR_4": null, "PNR_5": null
+        "PNR_1": null, "PNR_2": null, "PNR_3": null, "PNR_4": null, "PNR_5": null, "POPUP": false
     };
     function updateData() {
         const now = new Date();
@@ -185,7 +185,7 @@
             .then(data => {
                 if (Object.keys(data).length > 0) {
                     
-                    const pnrs = ["PNR_1", "PNR_2", "PNR_3", "PNR_4", "PNR_5"];
+                    const pnrs = ["PNR_1", "PNR_2", "PNR_3", "PNR_4", "PNR_5","POPUP"];
 
                     pnrs.forEach((pnr, index) => {
                         const callKey = `call_${index + 1}`;
@@ -199,7 +199,6 @@
                             });
                         }
 
-                        // Aktuellen Status für den nächsten Durchlauf speichern
                         lastCallStates[pnr] = currentCallStatus;
                     });
 
@@ -245,12 +244,11 @@
                     const card4 = document.querySelector('.card4');
                     const card5 = document.querySelector('.card5');
 
-                    if (data["POPUP"]["POP"] === true) {
+                    if (data["POPUP"]["call_6"] === true) {
                         document.getElementById('POPUP').showModal()
-                    } else {
+                    } else  {
                         document.getElementById('POPUP').close()
                     }
-
 
                     if (data["PNR_1"]["call_1"] === false) {
                         card1.classList.add('status-rot');

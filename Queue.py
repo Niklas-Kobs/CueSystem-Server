@@ -56,8 +56,8 @@ def handle_View():
             "Status-5": "---",
             "call-5": None
         },
-        "POP": {
-            "POP": True,
+        "POPUP": {
+            "call_6": True,
             "POP_H": "ERROR",
             "POP_T": "Queuefile not found or corrupted"
         }}
