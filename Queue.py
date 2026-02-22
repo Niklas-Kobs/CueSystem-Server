@@ -88,12 +88,19 @@ def handle_View():
 @app.route('/execute', methods=['POST'])
 def execute():
     exemsg = request.json
-    exe = exemsg.get("exe")
+    exe = int(exemsg.get("exe"))
 
-    if exe == "1":
-        print ("Execute Order 1")
+    print (f"Execute: {exe}")
+    jl.fileName(list_json)
 
-    return jsonify({"[INFO]":exe}), 200
+    if exe == 1:
+        jl.edit("call_6", False, group="POPUP")
+        sleep(1)
+        jl.edit("call_6", None, group="POPUP")
+    else:
+        print (f"[ERROR] Wrong Command: {exe}")
+
+    return jsonify({"[EXE]":exe}), 200
 
 @app.route('/update', methods=['POST'])
 def handle_request():
