@@ -134,6 +134,11 @@ def check_refresh(interval=5):
 
 def health_check(autoCreate=None):
     """Checks if the config file exists and creates a new one from the backup if needed."""
+
+    pfad = os.path.join(os.path.dirname(__file__), file_Name)
+    backup_pfad = pfad + ".bak"
+    reset_pfad = pfad + ".reset"
+
     if not os.path.exists(pfad):
         if autoCreate or config_autoCreate:
             if os.path.exists(backup_pfad):

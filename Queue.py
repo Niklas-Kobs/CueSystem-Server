@@ -7,12 +7,14 @@ import jsonLib as jl
 app = Flask(__name__)
 
 jsonList = {
-    "config": "../files/config.json", #configuration für das Projekt
-    "list": "../files/list.json"
+    "config": "files/config.json", #configuration für das Projekt
+    "list": "files/list.json"
 }
 
+list_json = "files/list.json"
+
 for key, file in jsonList.items():
-    jl.libconfig(check=True, autoLoad=True, autoCreate=False, Print=True, set_reset=True, filename=file)
+    jl.libconfig()
     print (f"Initialisier: {key} im Pfad {file}")
 
 readError = 0
@@ -127,6 +129,10 @@ def handle_request():
     Status_5 = data.get("Status_5")
     call_5 = data.get("call_5")
 
+    call_6 = data.get("call_6")
+    POP_H = data.get("POP_H")
+    POP_T = data.get("POP_T")
+
     daten = {
      "PNR_1": {
         "WNR_1": WNR_1,
@@ -157,16 +163,16 @@ def handle_request():
         "Timeestimate_5": Timeestimate_5,
         "Status_5": Status_5,
         "call_5": call_5
+    },
+    "POPUP": {
+        "call_6": call_6,
+        "POP_H": POP_H,
+        "POP_T": POP_T
     }
     }
-
-    if jl.addlist (daten):
-        pass
-        #print(f"Empfangen: {daten}")
-    else:
-        print(f"Fehler beim Hinzufügen von: {daten}")
-
-
+    jl.fileName(list_json)
+    print (f"Filename: {list_json} | Data: {daten}")
+    jl.addlist(daten)
     return jsonify({"status": "Erfolgreich empfangen"}), 200
             
 

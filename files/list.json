@@ -1,37 +1,46 @@
 {
+    "_header": {
+        "ConfVersion": "3.0",
+        "mode": "normal",
+        "refresh": true,
+        "locked": "unlocked",
+        "Print": null,
+        "MsgtoCons": 0,
+        "last_updated": "2026-02-22 22:26:48"
+    },
     "PNR_1": {
-        "WNR_1": "#0001",
+        "WNR_1": "0001",
         "Timeestimate_1": "12:00",
-        "Status_1": "Waiting",
+        "Status_1": "In Bearbeitung",
         "call_1": null
     },
     "PNR_2": {
-        "WNR_2": "#0002",
+        "WNR_2": "0002",
         "Timeestimate_2": "12:30",
-        "Status_2": "Waiting",
+        "Status_2": "In Bearbeitung",
         "call_2": null
     },
     "PNR_3": {
-        "WNR_3": "#0003",
+        "WNR_3": "0003",
         "Timeestimate_3": "13:00",
-        "Status_3": "Waiting",
+        "Status_3": "In Bearbeitung",
         "call_3": null
     },
     "PNR_4": {
-        "WNR_4": "#0004",
+        "WNR_4": "0004",
         "Timeestimate_4": "13:30",
-        "Status_4": "Waiting",
+        "Status_4": "In Bearbeitung",
         "call_4": null
     },
     "PNR_5": {
-        "WNR_5": "#0005",
-        "Timeestimate_5": "---",
-        "Status_5": "---",
+        "WNR_5": "0005",
+        "Timeestimate_5": "14:00",
+        "Status_5": "In Bearbeitung",
         "call_5": null
     },
     "POPUP": {
         "call_6": null,
-        "POP_H": "HINWEIS",
-        "POP_T": "Auf Grund von technischen Störungen werden sie gebeten das Haus zu verlassen. Bitte halten sie sich an die Anweisungen des Personals"
+        "POP_H": "---",
+        "POP_T": "---"
     }
 }
