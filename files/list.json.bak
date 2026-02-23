@@ -6,36 +6,36 @@
         "locked": "unlocked",
         "Print": null,
         "MsgtoCons": 1,
-        "last_updated": "2026-02-22 23:26:57"
+        "last_updated": "2026-02-23 01:20:00"
     },
     "PNR_1": {
-        "WNR_1": "---",
-        "Timeestimate_1": "---",
-        "Status_1": "---",
+        "WNR_1": "xcvxcvxcv",
+        "Timeestimate_1": "0",
+        "Status_1": "wartend",
         "call_1": null
     },
     "PNR_2": {
-        "WNR_2": "---",
-        "Timeestimate_2": "---",
-        "Status_2": "---",
+        "WNR_2": "cvbcvbc",
+        "Timeestimate_2": "0",
+        "Status_2": "wartend",
         "call_2": null
     },
     "PNR_3": {
-        "WNR_3": "---",
-        "Timeestimate_3": "---",
-        "Status_3": "---",
+        "WNR_3": "vbnvbn",
+        "Timeestimate_3": "0",
+        "Status_3": "wartend",
         "call_3": null
     },
     "PNR_4": {
-        "WNR_4": "---",
-        "Timeestimate_4": "---",
-        "Status_4": "---",
+        "WNR_4": "fghfghfgh",
+        "Timeestimate_4": "0",
+        "Status_4": "wartend",
         "call_4": null
     },
     "PNR_5": {
-        "WNR_5": "---",
-        "Timeestimate_5": "---",
-        "Status_5": "---",
+        "WNR_5": "sdfsdf",
+        "Timeestimate_5": "0",
+        "Status_5": "wartend",
         "call_5": null
     },
     "POPUP": {

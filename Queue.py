@@ -181,6 +181,19 @@ def handle_request():
     print (f"Filename: {list_json} | Data: {daten}")
     jl.addlist(daten)
     return jsonify({"status": "Erfolgreich empfangen"}), 200
+
+@app.route('/message', methods=['POST'])
+def handle_Msg():
+    data = request.json 
+    Call_6 = data.get("call_6")
+    POP_T = data.get("POP_T")
+    POP_H = data.get("POP_H")
+    print (f"Message: {POP_H} | {POP_T}  | Call: {Call_6} ")
+    jl.fileName(list_json)
+    jl.edit("POP_H", POP_H, group="POPUP")
+    jl.edit("POP_T", POP_T, group="POPUP")
+    jl.edit("call_6", Call_6, group="POPUP")
+    return jsonify({"status": "Erfolgreich empfangen"}), 200
             
 
 if __name__ == '__main__':
