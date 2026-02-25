@@ -14,10 +14,17 @@
                     <h1>Warteliste:</h1>
                     <h3>Warte bitte bis deine Nummer aufgerufen wird</h3>
                 </th>
-                <th><img src="{{ url_for('static', filename='img/DummyLogoW.svg') }}" alt="Logo" class="main-logo"></th>
+                <th><img src="{{ url_for('static', filename='img/DummyLogoB.svg') }}" alt="Logo" class="main-logo"></th>
             </theadHead>
         </table>
     </header>
+
+    <div class="list_head">
+        <th><span class="headH1">Nummer:</span></th>
+        <th><span class="headH1">Raum:</span></th>
+        <th><span class="headH1">Status:</span></th>
+    </div>
+
     <div class="list">
         <div class="card">
             <table>
@@ -26,15 +33,9 @@
                     <th class="wnr-spalte"><span id="WNR_1" class="WNR">---</span></th>
                     <th>
                         <table>
-                        <thead>
-                            <tr>
-                                <th><span class="dataH1">Geplante Zeit:</span></th>
-                                <th><span class="dataH1">Aktueller Status:</span></th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate_1" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Room_1" class="Timeestimate">---</span></h4></td>
                             <td><h4><span id="Status_1" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
@@ -52,15 +53,9 @@
                     <th class="wnr-spalte"><span id="WNR_2" class="WNR">---</span></th>
                     <th>
                         <table>
-                        <thead>
-                            <tr>
-                                <th><span class="dataH1">Geplante Zeit:</span></th>
-                                <th><span class="dataH1">Aktueller Status:</span></th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate_2" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Room_2" class="Timeestimate">---</span></h4></td>
                             <td><h4><span id="Status_2" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
@@ -78,15 +73,9 @@
                     <th class="wnr-spalte"><span id="WNR_3" class="WNR">---</span></th>
                     <th>
                         <table>
-                        <thead>
-                            <tr>
-                                <th><span class="dataH1">Geplante Zeit:</span></th>
-                                <th><span class="dataH1">Aktueller Status:</span></th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate_3" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Room_3" class="Timeestimate">---</span></h4></td>
                             <td><h4><span id="Status_3" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
@@ -104,15 +93,9 @@
                     <th class="wnr-spalte"><span id="WNR_4" class="WNR">---</span></th>
                     <th>
                         <table>
-                        <thead>
-                            <tr>
-                                <th><span class="dataH1">Geplante Zeit:</span></th>
-                                <th><span class="dataH1">Aktueller Status:</span></th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                            <td><h4><span id="Timeestimate_4" class="Timeestimate">---</span></h4></td>
+                            <td><h4><span id="Room_4" class="Timeestimate">---</span></h4></td>
                             <td><h4><span id="Status_4" class="Status">---</span></h4></td>
                             </tr>
                         </tbody>
@@ -130,15 +113,9 @@
                         <th class="wnr-spalte"><span id="WNR_5" class="WNR">---</span></th>
                         <th>
                             <table>
-                                <thead>
-                                    <tr>
-                                        <th><span class="dataH1">Geplante Zeit:</span></th>
-                                        <th><span class="dataH1">Aktueller Status:</span></th>
-                                    </tr>
-                                </thead>
                                 <tbody>
                                     <tr>
-                                    <td><h4><span id="Timeestimate_5" class="Timeestimate">---</span></h4></td>
+                                    <td><h4><span id="Room_5" class="Timeestimate">---</span></h4></td>
                                     <td><h4><span id="Status_5" class="Status">---</span></h4></td>
                                     </tr>
                                 </tbody>
@@ -216,23 +193,23 @@
                     const lastEntry = data[lastKey];
 
                     document.getElementById('WNR_1').innerText = data["PNR_1"]["WNR_1"];
-                    document.getElementById('Timeestimate_1').innerText = data["PNR_1"]["Timeestimate_1"];
+                    document.getElementById('Room_1').innerText = data["PNR_1"]["Room_1"];
                     document.getElementById('Status_1').innerText = data["PNR_1"]["Status_1"];
 
                     document.getElementById('WNR_2').innerText = data["PNR_2"]["WNR_2"];
-                    document.getElementById('Timeestimate_2').innerText = data["PNR_2"]["Timeestimate_2"];
+                    document.getElementById('Room_2').innerText = data["PNR_2"]["Room_2"];
                     document.getElementById('Status_2').innerText = data["PNR_2"]["Status_2"];
 
                     document.getElementById('WNR_3').innerText = data["PNR_3"]["WNR_3"];
-                    document.getElementById('Timeestimate_3').innerText = data["PNR_3"]["Timeestimate_3"];
+                    document.getElementById('Room_3').innerText = data["PNR_3"]["Room_3"];
                     document.getElementById('Status_3').innerText = data["PNR_3"]["Status_3"];
 
                     document.getElementById('WNR_4').innerText = data["PNR_4"]["WNR_4"];
-                    document.getElementById('Timeestimate_4').innerText = data["PNR_4"]["Timeestimate_4"];
+                    document.getElementById('Room_4').innerText = data["PNR_4"]["Room_4"];
                     document.getElementById('Status_4').innerText = data["PNR_4"]["Status_4"];
 
                     document.getElementById('WNR_5').innerText = data["PNR_5"]["WNR_5"];
-                    document.getElementById('Timeestimate_5').innerText = data["PNR_5"]["Timeestimate_5"];
+                    document.getElementById('Room_5').innerText = data["PNR_5"]["Room_5"];
                     document.getElementById('Status_5').innerText = data["PNR_5"]["Status_5"];
 
                     document.getElementById('POP_H').innerText = data["POPUP"]["POP_H"];

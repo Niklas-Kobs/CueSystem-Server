@@ -37,35 +37,35 @@ def handle_View():
         ERRORdata = {
         "PNR_1":{
             "WNR-1": "---",
-            "Timeestimate-1": "---",
+            "Room-1": "---",
             "Status-1": "---",
             "call-1": None
         },
 
         "PNR_2": {
             "WNR-2": "---",
-            "Timeestimate-2": "---",
+            "Room-2": "---",
             "Status-2": "---",
             "call-2": None
         },
 
         "PNR_3": {
             "WNR-3": "---",
-            "Timeestimate-3": "---",
+            "Room-3": "---",
             "Status-3": "---",
             "call-3": None
         },
 
         "PNR_4": {
             "WNR-4": "---",
-            "Timeestimate-4": "---",
+            "Room-4": "---",
             "Status-4": "---",
             "call-4": None
         },
 
         "PNR_5":{
             "WNR-5": "---",
-            "Timeestimate-5": "---",
+            "Room-5": "---",
             "Status-5": "---",
             "call-5": None
         },
@@ -108,31 +108,31 @@ def handle_request():
     
     PNR_1 = data.get("PNR_1")
     WNR_1 = data.get("WNR_1")
-    Timeestimate_1 = data.get("Timeestimate_1")
+    Room_1 = data.get("Room_1")
     Status_1 = data.get("Status_1")
     call_1 = data.get("call_1")
 
     PNR_2 = data.get("PNR_2")
     WNR_2 = data.get("WNR_2")
-    Timeestimate_2 = data.get("Timeestimate_2")
+    Room_2 = data.get("Room_2")
     Status_2 = data.get("Status_2")
     call_2 = data.get("call_2")
 
     PNR_3 = data.get("PNR_3")
     WNR_3 = data.get("WNR_3")
-    Timeestimate_3 = data.get("Timeestimate_3")
+    Room_3 = data.get("Room_3")
     Status_3 = data.get("Status_3")
     call_3 = data.get("call_3")
 
     PNR_4 = data.get("PNR_4")
     WNR_4 = data.get("WNR_4")
-    Timeestimate_4 = data.get("Timeestimate_4")
+    Room_4 = data.get("Room_4")
     Status_4 = data.get("Status_4")
     call_4 = data.get("call_4")
 
     PNR_5 = data.get("PNR_5")
     WNR_5 = data.get("WNR_5")
-    Timeestimate_5 = data.get("Timeestimate_5")
+    Room_5 = data.get("Room_5")
     Status_5 = data.get("Status_5")
     call_5 = data.get("call_5")
 
@@ -143,31 +143,31 @@ def handle_request():
     daten = {
      "PNR_1": {
         "WNR_1": WNR_1,
-        "Timeestimate_1": Timeestimate_1,
+        "Room_1": Room_1,
         "Status_1": Status_1,
         "call_1": call_1
     },
     "PNR_2": {
         "WNR_2": WNR_2,
-        "Timeestimate_2": Timeestimate_2,
+        "Room_2": Room_2,
         "Status_2": Status_2,
         "call_2": call_2
     },
     "PNR_3": {
         "WNR_3": WNR_3,
-        "Timeestimate_3": Timeestimate_3,
+        "Room_3": Room_3,
         "Status_3": Status_3,
         "call_3": call_3
     },
     "PNR_4": {
         "WNR_4": WNR_4,
-        "Timeestimate_4": Timeestimate_4,
+        "Room_4": Room_4,
         "Status_4": Status_4,
         "call_4": call_4
     },
     "PNR_5": {
         "WNR_5": WNR_5,
-        "Timeestimate_5": Timeestimate_5,
+        "Room_5": Room_5,
         "Status_5": Status_5,
         "call_5": call_5
     },
@@ -193,6 +193,10 @@ def handle_Msg():
     jl.edit("POP_H", POP_H, group="POPUP")
     jl.edit("POP_T", POP_T, group="POPUP")
     jl.edit("call_6", Call_6, group="POPUP")
+    return jsonify({"status": "Erfolgreich empfangen"}), 200
+
+@app.route('/alive', methods=['POST'])
+def handle_alive():
     return jsonify({"status": "Erfolgreich empfangen"}), 200
             
 
