@@ -7,129 +7,57 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <table>
-            <theadHead>
-                <th>
-                    <h1>Warteliste:</h1>
-                    <h3>Warte bitte bis deine Nummer aufgerufen wird</h3>
-                </th>
-                <th><img src="{{ url_for('static', filename='img/DummyLogoB.svg') }}" alt="Logo" class="main-logo"></th>
-            </theadHead>
-        </table>
+    <header class="main-header">
+        <div class="header-text">
+            <h1>Warteliste:</h1>
+            <h3>Warte bitte bis deine Nummer aufgerufen wird</h3>
+        </div>
+        <img src="{{ url_for('static', filename='img/DummyLogoB.svg') }}" alt="Logo" class="main-logo">
     </header>
 
-    <div class="list_head">
-        <th><span class="headH1">Nummer:</span></th>
-        <th><span class="headH1">Raum:</span></th>
-        <th><span class="headH1">Status:</span></th>
-    </div>
+    <main class="list-container">
+        <table class="queue-table">
+            <thead>
+                <tr class="list_head">
+                    <th class="col-nr">Nummer:</th>
+                    <th class="col-raum">Raum:</th>
+                    <th class="col-status">Status:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="row_1" class="row-card white">
+                    <td class="col-nr"><span id="WNR_1" class="WNR">---</span></td>
+                    <td class="col-raum"><h4><span id="Room_1" class="Timeestimate">---</span></h4></td>
+                    <td class="col-status"><h4><span id="Status_1" class="Status">---</span></h4></td>
+                </tr>
+                <tr id="row_2" class="row-card grey">
+                    <td class="col-nr"><span id="WNR_2" class="WNR">---</span></td>
+                    <td class="col-raum"><h4><span id="Room_2" class="Timeestimate">---</span></h4></td>
+                    <td class="col-status"><h4><span id="Status_2" class="Status">---</span></h4></td>
+                </tr>
+                <tr id="row_3" class="row-card white">
+                    <td class="col-nr"><span id="WNR_3" class="WNR">---</span></td>
+                    <td class="col-raum"><h4><span id="Room_3" class="Timeestimate">---</span></h4></td>
+                    <td class="col-status"><h4><span id="Status_3" class="Status">---</span></h4></td>
+                </tr>
+                <tr id="row_4" class="row-card grey">
+                    <td class="col-nr"><span id="WNR_4" class="WNR">---</span></td>
+                    <td class="col-raum"><h4><span id="Room_4" class="Timeestimate">---</span></h4></td>
+                    <td class="col-status"><h4><span id="Status_4" class="Status">---</span></h4></td>
+                </tr>
+                <tr id="row_5" class="row-card white">
+                    <td class="col-nr"><span id="WNR_5" class="WNR">---</span></td>
+                    <td class="col-raum"><h4><span id="Room_5" class="Timeestimate">---</span></h4></td>
+                    <td class="col-status"><h4><span id="Status_5" class="Status">---</span></h4></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
-    <div class="list">
-        <div class="card">
-            <table>
-                <thead>
-                    <tr>
-                    <th class="wnr-spalte"><span id="WNR_1" class="WNR">---</span></th>
-                    <th>
-                        <table>
-                        <tbody>
-                            <tr>
-                            <td><h4><span id="Room_1" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status_1" class="Status">---</span></h4></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-        <div class="card2">
-            <table>
-                <thead>
-                    <tr>
-                    <th class="wnr-spalte"><span id="WNR_2" class="WNR">---</span></th>
-                    <th>
-                        <table>
-                        <tbody>
-                            <tr>
-                            <td><h4><span id="Room_2" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status_2" class="Status">---</span></h4></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-            <div class="card3">
-            <table>
-                <thead>
-                    <tr>
-                    <th class="wnr-spalte"><span id="WNR_3" class="WNR">---</span></th>
-                    <th>
-                        <table>
-                        <tbody>
-                            <tr>
-                            <td><h4><span id="Room_3" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status_3" class="Status">---</span></h4></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-            <div class="card4">
-            <table>
-                <thead>
-                    <tr>
-                    <th class="wnr-spalte"><span id="WNR_4" class="WNR">---</span></th>
-                    <th>
-                        <table>
-                        <tbody>
-                            <tr>
-                            <td><h4><span id="Room_4" class="Timeestimate">---</span></h4></td>
-                            <td><h4><span id="Status_4" class="Status">---</span></h4></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-            <div class="card5">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="wnr-spalte"><span id="WNR_5" class="WNR">---</span></th>
-                        <th>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                    <td><h4><span id="Room_5" class="Timeestimate">---</span></h4></td>
-                                    <td><h4><span id="Status_5" class="Status">---</span></h4></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
-    <div class="Time">
+    <footer class="Time">
         <p>Aktuelle Zeit: <span id="clock">---</span></p>
-    </div>
+    </footer>
+    
 
     <dialog id="POPUP" class="POPUP">
         <div class="thPOP">
@@ -215,86 +143,34 @@
                     document.getElementById('POP_H').innerText = data["POPUP"]["POP_H"];
                     document.getElementById('POP_T').innerText = data["POPUP"]["POP_T"];
 
-                    const card1 = document.querySelector('.card');
-                    const card2 = document.querySelector('.card2');
-                    const card3 = document.querySelector('.card3');
-                    const card4 = document.querySelector('.card4');
-                    const card5 = document.querySelector('.card5');
-
-                    if (data["POPUP"]["call_6"] === true) {
-                        document.getElementById('POPUP').showModal()
-                    } else  {
-                        document.getElementById('POPUP').close()
+                    // 1. Das Popup steuern
+                    const popup = document.getElementById('POPUP');
+                    if (data["POPUP"] && data["POPUP"]["call_6"] === true) {
+                        popup.showModal();
+                    } else {
+                        popup.close();
                     }
 
-                    if (data["PNR_1"]["call_1"] === false) {
-                        card1.classList.add('status-rot');
-                        card1.classList.remove('status-green');
-                    } else {
-                        card1.classList.remove('status-rot');
-                    }
+                    // 2. Die Karten (Zeilen) in einer Schleife verarbeiten
+                    for (let i = 1; i <= 5; i++) {
+                        const card = document.getElementById(`row_${i}`); // Holt row_1, row_2, etc.
+                        const pnrData = data[`PNR_${i}`];
 
-                    if (data["PNR_2"]["call_2"] === false) {
-                        card2.classList.add('status-rot');
-                        card2.classList.remove('status-green');
-                    } else {
-                        card2.classList.remove('status-rot');
-                    }
+                        if (card && pnrData) {
+                            const isCalled = pnrData[`call_${i}`];
 
-                    if (data["PNR_3"]["call_3"] === false) {
-                        card3.classList.add('status-rot');
-                        card3.classList.remove('status-green');
-                    } else {
-                        card3.classList.remove('status-rot');
-                    }
+                            // Status zurücksetzen
+                            card.classList.remove('status-rot', 'status-green', 'status-green2');
 
-                    if (data["PNR_4"]["call_4"] === false) {
-                        card4.classList.add('status-rot');
-                        card4.classList.remove('status-green');
-                    } else {
-                        card4.classList.remove('status-rot');
-                    }
-
-                    if (data["PNR_5"]["call_5"] === false) {
-                        card5.classList.add('status-rot');
-                        card5.classList.remove('status-green');
-                    } else {
-                        card5.classList.remove('status-rot');
-                    }
-
-                    if (data["PNR_1"]["call_1"] === true) {
-                        card1.classList.add('status-green');
-                        card1.classList.remove('status-rot');
-                    } else {
-                        card1.classList.remove('status-green');
-                    }
-
-                    if (data["PNR_2"]["call_2"] === true) {
-                        card2.classList.add('status-green2');
-                        card2.classList.remove('status-rot');
-                    } else {
-                        card2.classList.remove('status-green2');
-                    }
-
-                    if (data["PNR_3"]["call_3"] === true) {
-                        card3.classList.add('status-green');
-                        card3.classList.remove('status-rot');
-                    } else {
-                        card3.classList.remove('status-green');
-                    }
-
-                    if (data["PNR_4"]["call_4"] === true) {
-                        card4.classList.add('status-green2');
-                        card4.classList.remove('status-rot');
-                    } else {
-                        card4.classList.remove('status-green2');
-                    }
-
-                    if (data["PNR_5"]["call_5"] === true) {
-                        card5.classList.add('status-green');
-                        card5.classList.remove('status-rot');
-                    } else {
-                        card5.classList.remove('status-green');
+                            if (isCalled === true) {
+                                const greenClass = (i % 2 === 0) ? 'status-green2' : 'status-green';
+                                card.classList.add(greenClass);
+                            } 
+                            else if (isCalled === false) {
+                                // Wenn nicht aufgerufen (oder explizit false): Rot
+                                card.classList.add('status-rot');
+                            }
+                        }
                     }
                 }
             })

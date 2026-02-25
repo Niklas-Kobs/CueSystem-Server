@@ -1,244 +1,83 @@
+/* Grundkonfiguration */
 body {
     font-family: Arial, sans-serif;
     background-color: #d1d1d1;
-    margin: 20px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: normal;
-}
-
-.list_head{ 
-    font-family: Arial, sans-serif;
-    background-color: #d1d1d1;
-    margin: 0;
-    gap: 28%;
-    margin-left: 13%;
-    padding: 20px !important;
-    display: flex;
-    flex-direction: row !important;
-    align-items: normal !important;
-}
-
-.list {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
     margin: 0;
     padding: 20px;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-header {
-    color: #b30606;
-    width: auto;
-    margin-top: 40px;
-    margin-bottom: 45px;
-    margin-left: 9%;
+/* Header Bereich */
+.main-header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
+    padding: 0 5%;
 }
 
 .main-logo {
-    height: 100px;      
+    height: 100px;
     width: auto;
-    margin-right: 90px;
-    vertical-align: middle;
 }
 
-table {
+/* Tabellen-Layout für bündige Spalten */
+.queue-table {
     width: 100%;
-    border-radius: 8px;
-    margin-top: -5px;
-    text-align: center;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 15px; /* Erzeugt Abstand zwischen den Zeilen */
+    table-layout: fixed;    /* WICHTIG: Erzwingt bündige Spalten */
 }
 
-td {
-    width: 20%;
-    border-radius: 8px;
-    overflow: hidden;
-    align-items: normal;
-    text-align: normal;
-    padding-top: auto;
-    padding-bottom: auto;
-}
+/* Spaltenbreiten definieren */
+.col-nr { width: 33%; text-align: center; }
+.col-raum { width: 33%; text-align: center; }
+.col-status { width: 33%; text-align: center; }
 
-tr {
-    width: 20%;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: normal;
-    padding-top: auto;
-    padding-bottom: auto;
-    padding-left: auto;
-    padding-right: auto;
-}
-
-.wnr-spalte {
-    width: 28%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.card {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
-    width: 95%;
-    height: 75px;
-    text-align: center;
-    justify-content: space-between;
-}
-.card2 {
-    background: #d1d1d1;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
-    width: 95%;
-    height: 75px;
-    text-align: center;
-    justify-content: space-between;
-}
-.card3 {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
-    width: 95%;
-    height: 75px;
-    text-align: center;
-    justify-content: space-between;
-}
-.card4 {
-    background: #d1d1d1;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
-    width: 95%;
-    height: 75px;
-    text-align: center;
-    justify-content: space-between;
-}
-.card5 {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 2 20px 20px rgba(0,0,0,0.1);
-    width: 95%;
-    height: 75px;
-    text-align: center;
-    justify-content: space-between;
-}
-
-h1 {
-    color: #2c3e50;
-    font-size: 55px;
-    text-align: left;
-}
-
-h2 {
-    color: #2c3e50;
-    font-size: 30px;
-    text-align: left;
-}
-
-h3 {
-    color: #2c3e50;
-    font-size: 20px;
-    text-align: left;
-    margin-left: 5px;
-    margin-top: -5px;
-}
-
-.dataH1 {
-    color: #000000;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.headH1 {
-    color: #000000;
+/* Überschriften */
+.list_head th {
     font-size: 30px;
     font-weight: bold;
+    padding-bottom: 10px;
+    color: #000;
 }
 
-.WNR {
-    color: #000000;
-    font-size: 35px;
-    font-weight: bold;
-}
-.POPUP {
-    font-family: Arial, sans-serif;
-    width: 80%;
-    height: 80%;
-    border-radius: 15px; 
-    border-color: #b4b4b4;
-    padding: 2rem;
-    background-color: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    margin-top: 50px;   
-    opacity: 1;
-
+/* Zeilen-Styling (Ersatz für .card) */
+.row-card {
+    height: 100px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.POPUP[open] {
-    animation: slideIn 0.4s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.row-card td {
+    padding: 20px;
 }
 
-.POPH {
-    margin-top: 0px;
-    color: #5d6a8a;
-    font-size: 50px;
-    font-weight: bold;
+/* Abgerundete Ecken für Zeilen */
+.row-card td:first-child { border-radius: 12px 0 0 12px; }
+.row-card td:last-child { border-radius: 0 12px 12px 0; }
+
+.white { background-color: #ffffff; }
+.grey { background-color: #e0e0e0; } /* Ein etwas dunkleres Grau für den Kontrast */
+
+/* Text-Styles */
+h1 { font-size: 55px; color: #2c3e50; margin: 0; }
+h3 { font-size: 20px; color: #2c3e50; margin: 5px 0 0 0; }
+
+.WNR { font-size: 40px; font-weight: bold; }
+.Timeestimate, .Status { font-size: 24px; font-weight: bold; }
+
+/* Animationen & Status */
+.status-green {
+    animation: blinker 1.5s ease-in-out infinite;
 }
 
-.POPT {
-    color: #000000;
-    font-size: 30px;
+.status-rot{
+    animation: blinker-rot 1.5s ease-in-out infinite;
 }
 
-.thPOP {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: Top;
-    align-items: center;
-    text-align: center;    
-}
-
-.Timeestimate {
-    color: #000000;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.Status {
-    color: #000000;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.Time {
-    color: #2c3e50;
-    height: 20px;
-    font-size: 20px;
-}
-
-@keyframes blinker2 {
-    0%   { opacity: 1.0; } 
-    50%  { opacity: 0.5; }
-    100% { opacity: 1.0; }
+.status-green2 {
+    animation: blinker 1.5s ease-in-out infinite;
 }
 
 @keyframes blinker {
@@ -247,120 +86,17 @@ h3 {
     100% { background-color: #a8ce76; }
 }
 
-@keyframes blinkerRot {
-    0%   { background-color: #dc3545; } 
-    50%  { background-color: #ff6762; }
-    100% { background-color: #dc3545; }
+@keyframes blinker-rot {
+    0%   { background-color: #d42727; } 
+    50%  { background-color: #963333; }
+    100% { background-color: #d42727; }
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8) translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-.status-green {
-    /*background-color: #e9ffc6 !important;*/
-    border: 2px solid #ffffff;
-    color: rgb(0, 0, 0);
-    animation: blinker 1.5s ease-in-out infinite !important;
-}
-
-.status-green2 {
-     /*background-color: #e9ffc6 !important;*/
-    border: 2px solid #ffffff;
-    color: rgb(0, 0, 0);
-    animation: blinker 1.5s ease-in-out infinite !important;
-}
-
-.status-rot {
-    background-color: #dc3545;
-    color: white;
-    animation: blinkerRot 1.5s ease-in-out infinite !important;
-}
-
+/* Mobile Optimierung */
 @media (max-width: 768px) {
-    header {
-        color: #b30606;
-        width: auto;
-        margin-top:10px;
-        margin-bottom: 20px;
-        margin-left: 9%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    .main-logo {
-        height: 70px;      
-        width: auto;
-        margin-right: 30px;
-        margin-left:30px;
-        vertical-align: left;
-    }
-    body {
-        margin: 5px;
-    }
-
-    h1 {
-        font-size: 25px;
-    }
-
-    h3 {
-        font-size: 15px;
-    }
-
-    .card, .card2, .card3, .card4, .card5 {
-        width: 95%;
-        height: 60px;
-        padding: 1rem;
-        /*background-color: #000000;*/
-    }
-
-    .dataH1 {
-        font-size: 15px;
-        color: #000000;
-    }
-
-    .Timeestimate {
-        color: #000000;
-        font-size: 15px;
-        font-weight: bold;
-    }
-
-    .Status {
-        color: #000000;
-        font-size: 15px;
-        font-weight: bold;
-    }
-
-    .WNR {
-        font-size: 20px;
-    }
-
-    .Time {
-    color: #2c3e50;
-    height: 10px;
-    font-size: 15px;
-    }
-
-    .POPT {
-    color: #ffffff;
-    font-size: 25px;
-    }
-
-    .thPOP {
-        margin-top: 10%;
-        width: 80%;
-        display: block;
-        display: flex;
-        flex-direction: column;
-        justify-content: Top;
-        align-items: center;
-        text-align: center;    
-    }
+    .main-header { flex-direction: column; text-align: center; }
+    .main-logo { height: 60px; margin: 20px 0; }
+    .list_head th { font-size: 18px; }
+    .WNR { font-size: 25px; }
+    .Timeestimate, .Status { font-size: 16px; }
 }
