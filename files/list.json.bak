@@ -6,35 +6,35 @@
         "locked": "unlocked",
         "Print": null,
         "MsgtoCons": 1,
-        "last_updated": "2026-02-25 23:18:34"
+        "last_updated": "2026-02-26 01:03:22"
     },
     "PNR_1": {
-        "WNR_1": "asd",
-        "Room_1": "20",
+        "WNR_1": "#1211",
+        "Room_1": "7",
         "Status_1": "Aufgerufen",
         "call_1": true
     },
     "PNR_2": {
-        "WNR_2": "asdasd",
-        "Room_2": "34",
+        "WNR_2": "#1203",
+        "Room_2": "1",
         "Status_2": "Bitte warten",
         "call_2": null
     },
     "PNR_3": {
-        "WNR_3": "asdfgdsa",
-        "Room_3": "9",
+        "WNR_3": "#1204",
+        "Room_3": "12",
         "Status_3": "Bitte warten",
         "call_3": null
     },
     "PNR_4": {
-        "WNR_4": "vbnvbbn",
-        "Room_4": "7",
+        "WNR_4": "#1205",
+        "Room_4": "1",
         "Status_4": "Bitte warten",
         "call_4": null
     },
     "PNR_5": {
-        "WNR_5": "trtrz",
-        "Room_5": "12",
+        "WNR_5": "#1206",
+        "Room_5": "3",
         "Status_5": "Bitte warten",
         "call_5": null
     },

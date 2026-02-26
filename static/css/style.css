@@ -1,7 +1,7 @@
 /* Grundkonfiguration */
 body {
     font-family: Arial, sans-serif;
-    background-color: #d1d1d1;
+    background-color: #F2F5F7;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -13,7 +13,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
     padding: 0 5%;
 }
 
@@ -22,12 +23,31 @@ body {
     width: auto;
 }
 
+.Time {
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #888;
+    margin-left: 5%;
+    margin-bottom: -20px;
+}
 /* Tabellen-Layout für bündige Spalten */
 .queue-table {
+    width: 90%;
+    border-collapse: separate; 
+    border-spacing: 0 15px; 
+    table-layout: fixed;
+    margin: 40px;
+}
+
+.queue-table-bg{
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 15px; /* Erzeugt Abstand zwischen den Zeilen */
-    table-layout: fixed;    /* WICHTIG: Erzwingt bündige Spalten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(1,1,1,0.3);
 }
 
 /* Spaltenbreiten definieren */
@@ -40,25 +60,31 @@ body {
     font-size: 30px;
     font-weight: bold;
     padding-bottom: 10px;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: #888;
     color: #000;
 }
 
 /* Zeilen-Styling (Ersatz für .card) */
 .row-card {
     height: 100px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .row-card td {
     padding: 20px;
 }
 
-/* Abgerundete Ecken für Zeilen */
-.row-card td:first-child { border-radius: 12px 0 0 12px; }
-.row-card td:last-child { border-radius: 0 12px 12px 0; }
+.row-card td:first-child { 
+    border-radius: 15px !important;
+} 
+
+.row-card td:last-child { 
+    border-radius: 15px !important; 
+}
 
 .white { background-color: #ffffff; }
-.grey { background-color: #e0e0e0; } /* Ein etwas dunkleres Grau für den Kontrast */
+.grey { background-color: #F2F5F7; }
 
 /* Text-Styles */
 h1 { font-size: 55px; color: #2c3e50; margin: 0; }
@@ -92,7 +118,50 @@ h3 { font-size: 20px; color: #2c3e50; margin: 5px 0 0 0; }
     100% { background-color: #d42727; }
 }
 
-/* Mobile Optimierung */
+.POPUP {
+    width: 60%;
+    height: 60%;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    background-color: #ffffff;
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.POPUP[open] {
+    display: flex;
+}
+
+.thPOP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    gap: 50px !important;
+}
+
+.POPUP::backdrop {
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.POPH {
+    color: #2c3e50; 
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.POPT {
+    color: #000000; 
+    font-weight: 550;
+    font-size: 1.5rem;
+}
+
 @media (max-width: 768px) {
     .main-header { flex-direction: column; text-align: center; }
     .main-logo { height: 60px; margin: 20px 0; }
