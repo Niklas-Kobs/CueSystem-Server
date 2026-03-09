@@ -7,7 +7,7 @@ import jsonLib as jl
 app = Flask(__name__)
 
 jsonList = {
-    "config": "files/config.json", #configuration für das Projekt
+    #"config": "files/config.json", #configuration für das Projekt
     "list": "files/list.json"
 }
 
