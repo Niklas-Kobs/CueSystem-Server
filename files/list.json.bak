@@ -6,18 +6,18 @@
         "locked": "unlocked",
         "Print": null,
         "MsgtoCons": 1,
-        "last_updated": "2026-02-27 18:59:57"
+        "last_updated": "2026-03-09 19:43:47"
     },
     "PNR_1": {
-        "WNR_1": "#0124",
-        "Room_1": "2",
-        "Status_1": "Bitte warten",
+        "WNR_1": "---",
+        "Room_1": "---",
+        "Status_1": "---",
         "call_1": null
     },
     "PNR_2": {
-        "WNR_2": "#0125",
-        "Room_2": "5",
-        "Status_2": "Bitte warten",
+        "WNR_2": "---",
+        "Room_2": "---",
+        "Status_2": "---",
         "call_2": null
     },
     "PNR_3": {
