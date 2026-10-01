@@ -1,3 +1,6 @@
+<img width="1280" height="640" alt="Git_Repo_Coverart-4" src="https://github.com/user-attachments/assets/2b1c1106-01f4-4597-8e63-5b7ad381c827" />
+
+
 Welcome to **CueSystem-Server (API)**, a lightweight Flask-based web server and REST API designed to host waiting room displays and manage live queue updates!
 
 This server provides endpoints for displaying current queue statuses, updating patient data, handling popup alerts, and executing remote system triggers.
