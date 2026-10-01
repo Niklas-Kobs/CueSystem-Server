@@ -1,60 +1,55 @@
-Welcome to **Queue System v2.0**, a lightweight patient management and queue display solution designed to streamline waiting room management and real-time status updates!
+Welcome to **CueSystem-Server (API)**, a lightweight Flask-based web server and REST API designed to host waiting room displays and manage live queue updates!
 
-Manage patient queues via a desktop GUI, synchronize data across web endpoints, and trigger live popups or status calls directly on waiting room screens.
+This server provides endpoints for displaying current queue statuses, updating patient data, handling popup alerts, and executing remote system triggers.
 
 ---
 
 ## Key Features
 
-- **Desktop GUI Management:** Native desktop interface powered by `pywebview` for managing patients and queue order.
-- **SQLite Database Backend:** Persistent storage for queue data with automatic cleanup of old entries.
-- **Real-Time Web API & Server:** Built-in Flask/Waitress server to stream live queue status (`/show`) to web interfaces.
-- **Dynamic Reordering:** Easily move patients up, down, to the top, or to the end of the queue.
-- **Popup & Call Notification System:** Send custom messages and call triggers directly to the display interface via API endpoints.
-- **Configuration Management:** Integrated configuration handling using `jsonLib`.
+- **Web Display Interface:** Serves the main waiting room web page (`index.html`) via Flask templates.
+- **Production Server Ready:** Powered by Waitress WSGI server with multi-threading support for high reliability.
+- **REST API Endpoints:** Handles incoming POST requests for live queue updates, popup alerts, system execution commands, and heartbeat checks.
+- **JSON State Management:** Leverages `jsonLib` to save, update, and manage persistent queue data (`files/list.json`).
+- **Built-in Error Handling & Fallback:** Retries file access on reading errors and displays a fallback error screen if the queue file is missing or unreadable after multiple attempts.
 
 ---
 
 ## Installation & Setup
 
-### Prerequisites
+### Requirements
 
-Make sure you have Python installed, then install the required dependencies:
+Ensure you have Python installed, then install the required dependencies:
 
 ```bash
-pip install flask waitress pywebview requests
+pip install flask waitress
 ```
 
-*(Ensure your custom `jsonLib` module is placed in the project root directory.)*
+*(Note: Make sure your custom `jsonLib` module is placed in the project root directory and the `files/` folder exists.)*
 
-### Running the Application
+### Running the Server
 
-1. **Start the Web Display Server (Backend API):**
-   ```bash
-   python server.py
-   ```
-   *The server runs on port `55000` by default using Waitress.*
+Start the web server by running:
 
-2. **Start the Desktop Management App (GUI):**
-   ```bash
-   python main.py
-   ```
+```bash
+python app.py
+```
+
+The server will launch on port `55000` with 6 threads:
+`http://0.0.0.0:55000/`
 
 ---
 
-## How to Use
+## API Endpoints
 
-1. Launch the Server and Desktop Application.
-2. **In the Desktop App:**
-   - Add new patient entries with details (ID, Name, Room, Doctor, Duration).
-   - Reorder queue entries or toggle call statuses.
-   - Click refresh/sync to send updated queue data to the web display server.
-   - Send popup notifications or pop messages to waiting room displays.
-3. **On the Waiting Room Display:**
-   - Open a browser pointing to the server root URL (`http://<server-ip>:55000/`) to view real-time patient queue updates.
+- `GET /` — Renders the main web interface (`index.html`).
+- `GET /show` — Returns the current queue and popup status as JSON.
+- `POST /update` — Receives full queue data updates (up to 5 patient slots + popup state) and updates `list.json`.
+- `POST /message` — Directly updates popup notifications (`POP_H`, `POP_T`, `call_6`).
+- `POST /execute` — Triggers automated commands (e.g., toggling popup resets).
+- `POST /alive` — Simple health-check endpoint returning server availability status.
 
 ---
 
 ## Feedback & Bug Reporting
 
-Found an issue with queue syncing or have a feature request? Please open an issue on GitHub or contact the system administrator!
+Found a bug or running into issues? Please open an issue on GitHub or contact your administrator!
