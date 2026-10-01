@@ -34,7 +34,7 @@ pip install flask waitress
 Start the web server by running:
 
 ```bash
-python app.py
+python Queue.py
 ```
 
 The server will launch on port `55000` with 6 threads:
